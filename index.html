@@ -3,28 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>Russette | My Website</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <!-- Navigation -->
     <header>
-        <h1>Welcome to My Website</h1>
-        <p>This website was built from scratch.</p>
+        <nav class="navbar">
+            <a href="#home" class="logo">Russette.</a>
+
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
     </header>
 
-    <main>
-        <h2>About Me</h2>
-        <p>
-            Welcome! This is my first website. I'm learning how to build
-            websites using HTML, CSS and JavaScript.
-        </p>
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <p class="welcome">WELCOME TO MY WEBSITE 👋</p>
 
-        <button id="myButton">Click Me</button>
-        <p id="message"></p>
-    </main>
+            <h1>Hi, I'm <span>Russette</span></h1>
+
+            <h2>I'm learning to build amazing things on the web.</h2>
+
+            <p>
+                This is my first website. I'm learning HTML, CSS and JavaScript
+                and I'm excited to see where this journey takes me.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#projects" class="btn primary">View My Projects</a>
+                <a href="#contact" class="btn secondary">Contact Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+        <div class="section-title">
+            <p>GET TO KNOW ME</p>
+            <h2>About Me</h2>
+        </div>
+
+        <div class="about-card">
+            <div class="about-icon">💻</div>
+
+            <div>
+                <h3>I'm learning web development</h3>
+
+                <p>
+                    Welcome! This is my first website. I'm currently learning
+                    how websites are built using HTML, CSS and JavaScript.
+                    Every project I create helps me learn something new.
+                </p>
+
+                <p>
+                    My goal is to keep improving my skills, build interesting
+                    projects and create websites that look great and are easy
+                    to use.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section projects-section">
+        <div class="section-title">
+            <p>WHAT I'M BUILDING</p>
+            <h2>My Projects</h2>
+        </div>
+
+        <div class="projects-grid">
+
+            <div class="project-card">
+                <div class="project-icon">🌐</div>
+                <h3>My First Website</h3>
+                <p>
+                    This website! Built with HTML, CSS and JavaScript and
+                    hosted using GitHub Pages.
+                </p>
+                <span>HTML • CSS • JavaScript</span>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">🚀</div>
+                <h3>Coming Soon</h3>
+                <p>
+                    I'm currently learning and working on new projects.
+                    Something exciting will appear here soon.
+                </p>
+                <span>In Progress</span>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">💡</div>
+                <h3>Future Project</h3>
+                <p>
+                    This space is waiting for the next idea I bring to life
+                    with code.
+                </p>
+                <span>Coming Soon</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section contact-section">
+        <div class="section-title">
+            <p>LET'S CONNECT</p>
+            <h2>Contact Me</h2>
+        </div>
+
+        <div class="contact-card">
+            <h3>Thanks for visiting! 👋</h3>
+
+            <p>
+                I'm still learning, but this is just the beginning.
+                More projects and updates are coming soon.
+            </p>
+
+            <button id="clickButton" class="btn primary">
+                Click Me
+            </button>
+
+            <p id="message"></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Russette. Built with HTML, CSS & JavaScript.</p>
+    </footer>
 
     <script src="script.js"></script>
+
 </body>
 </html>
