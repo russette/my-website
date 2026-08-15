@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #222;
+    text-align: center;
+}
+
+header {
+    padding: 80px 20px;
+    background: #111;
+    color: white;
+}
+
+header h1 {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+header p {
+    font-size: 20px;
+}
+
+main {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+main h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+main p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
