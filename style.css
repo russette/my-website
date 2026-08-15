@@ -1,52 +1,416 @@
+/* =========================
+   General
+========================= */
+
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
-    color: #222;
-    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b1020;
+    color: #ffffff;
+    line-height: 1.6;
 }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================
+   Navigation
+========================= */
 
 header {
-    padding: 80px 20px;
-    background: #111;
-    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(11, 16, 32, 0.85);
+    backdrop-filter: blur(10px);
 }
 
-header h1 {
-    font-size: 45px;
-    margin-bottom: 15px;
+.navbar {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header p {
-    font-size: 20px;
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #ffffff;
 }
 
-main {
+.logo::first-letter {
+    color: #7c5cff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #c9c9d4;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #7c5cff;
+}
+
+
+/* =========================
+   Hero
+========================= */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 25px 80px;
+    background:
+        radial-gradient(circle at top left, #24165c, transparent 35%),
+        radial-gradient(circle at bottom right, #112d50, transparent 35%),
+        #0b1020;
+}
+
+.hero-content {
     max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
+    animation: fadeUp 1s ease;
 }
 
-main h2 {
-    font-size: 32px;
+.welcome {
+    color: #7c5cff;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
     margin-bottom: 20px;
 }
 
-main p {
-    font-size: 18px;
-    line-height: 1.6;
+.hero h1 {
+    font-size: clamp(45px, 8vw, 85px);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #7c5cff;
+}
+
+.hero h2 {
+    font-size: clamp(20px, 4vw, 32px);
+    font-weight: 400;
+    color: #ddddE8;
+    margin-bottom: 20px;
+}
+
+.hero-content > p:not(.welcome) {
+    max-width: 650px;
+    margin: auto;
+    color: #a9a9b8;
+    font-size: 17px;
+}
+
+.hero-buttons {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+/* =========================
+   Buttons
+========================= */
+
+.btn {
+    display: inline-block;
+    padding: 13px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.primary {
+    background: #7c5cff;
+    color: white;
+}
+
+.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(124, 92, 255, 0.35);
+}
+
+.secondary {
+    border: 1px solid #44445a;
+    color: white;
+}
+
+.secondary:hover {
+    border-color: #7c5cff;
+    color: #7c5cff;
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   Sections
+========================= */
+
+.section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 100px 25px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title p {
+    color: #7c5cff;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.section-title h2 {
+    font-size: 42px;
+}
+
+
+/* =========================
+   About
+========================= */
+
+.about-card {
+    background: #131a2e;
+    border: 1px solid #252c42;
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    transition: 0.3s;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    border-color: #7c5cff;
+}
+
+.about-icon {
+    font-size: 50px;
+}
+
+.about-card h3 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.about-card p {
+    color: #a9a9b8;
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   Projects
+========================= */
+
+.projects-section {
+    max-width: 1200px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.project-card {
+    background: #131a2e;
+    border: 1px solid #252c42;
+    border-radius: 20px;
+    padding: 30px;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: #7c5cff;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.project-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.project-card h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.project-card p {
+    color: #a9a9b8;
+    margin-bottom: 20px;
+}
+
+.project-card span {
+    color: #7c5cff;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+/* =========================
+   Contact
+========================= */
+
+.contact-section {
+    text-align: center;
+}
+
+.contact-card {
+    max-width: 700px;
+    margin: auto;
+    background: #131a2e;
+    border: 1px solid #252c42;
+    border-radius: 20px;
+    padding: 50px 30px;
+}
+
+.contact-card h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.contact-card p {
+    color: #a9a9b8;
     margin-bottom: 25px;
 }
 
-button {
-    padding: 12px 25px;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
+#message {
+    color: #7c5cff;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+
+/* =========================
+   Footer
+========================= */
+
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 1px solid #252c42;
+    color: #777b8e;
+    font-size: 14px;
+}
+
+
+/* =========================
+   Animation
+========================= */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 750px) {
+
+    .navbar {
+        padding: 18px;
+    }
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    .hero {
+        padding-top: 130px;
+    }
+
+    .about-card {
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title h2 {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .nav-links {
+        gap: 9px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .hero h2 {
+        font-size: 21px;
+    }
+
+    .hero-content > p:not(.welcome) {
+        font-size: 15px;
+    }
 }
