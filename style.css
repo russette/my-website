@@ -73,6 +73,22 @@ header {
     color: #7c5cff;
 }
 
+.nav-button {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #7c5cff;
+    color: #ffffff;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.nav-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(124, 92, 255, 0.35);
+}
+
 
 /* =========================
    Hero
@@ -238,6 +254,51 @@ header {
 
 
 /* =========================
+   Skills
+========================= */
+
+.skills-section {
+    max-width: 1200px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.skill-card {
+    background: #131a2e;
+    border: 1px solid #252c42;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    border-color: #7c5cff;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.skill-icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.skill-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    color: #a9a9b8;
+    font-size: 15px;
+}
+
+
+/* =========================
    Projects
 ========================= */
 
@@ -321,6 +382,18 @@ header {
     margin-bottom: 0;
 }
 
+.contact-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
 
 /* =========================
    Footer
@@ -379,12 +452,18 @@ footer {
         padding: 30px;
     }
 
-    .projects-grid {
+    .projects-grid,
+    .skills-grid {
         grid-template-columns: 1fr;
     }
 
     .section-title h2 {
         font-size: 34px;
+    }
+
+    .nav-button {
+        padding: 8px 12px;
+        font-size: 12px;
     }
 }
 
@@ -413,23 +492,8 @@ footer {
     .hero-content > p:not(.welcome) {
         font-size: 15px;
     }
-}
-/* =========================
-   Navbar Button
-========================= */
 
-.nav-button {
-    display: inline-block;
-    padding: 10px 18px;
-    background: #7c5cff;
-    color: #ffffff;
-    border-radius: 10px;
-    font-weight: 600;
-    font-size: 14px;
-    transition: 0.3s ease;
-}
-
-.nav-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(124, 92, 255, 0.35);
+    .nav-button {
+        display: none;
+    }
 }
