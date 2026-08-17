@@ -1,4 +1,3 @@
-```javascript
 // =========================
 // MOBILE MENU
 // =========================
@@ -21,6 +20,7 @@ if (menuButton && navLinks) {
         }
 
     });
+
 
     // Close mobile menu when a link is clicked
 
@@ -52,7 +52,7 @@ if (menuButton && navLinks) {
 
 const skillBars = document.querySelectorAll(".skill-progress");
 
-if (skillBars.length > 0) {
+if ("IntersectionObserver" in window) {
 
     const skillObserver = new IntersectionObserver(
         (entries, observer) => {
@@ -75,6 +75,7 @@ if (skillBars.length > 0) {
         }
     );
 
+
     skillBars.forEach(bar => {
 
         bar.style.animationPlayState = "paused";
@@ -83,47 +84,10 @@ if (skillBars.length > 0) {
 
     });
 
-}
+} else {
 
-
-// =========================
-// SCROLL REVEAL ANIMATION
-// =========================
-
-const revealElements = document.querySelectorAll(
-    ".about-card, .skill-card, .project-card, .contact-card"
-);
-
-if (revealElements.length > 0) {
-
-    revealElements.forEach(element => {
-        element.classList.add("reveal");
-    });
-
-    const revealObserver = new IntersectionObserver(
-        (entries, observer) => {
-
-            entries.forEach(entry => {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.classList.add("show");
-
-                    observer.unobserve(entry.target);
-
-                }
-
-            });
-
-        },
-        {
-            threshold: 0.15
-        }
-    );
-
-    revealElements.forEach(element => {
-        revealObserver.observe(element);
+    skillBars.forEach(bar => {
+        bar.style.animationPlayState = "running";
     });
 
 }
-```
