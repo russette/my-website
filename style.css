@@ -1,3 +1,4 @@
+```css
 /* =========================
    RESET & GENERAL
 ========================= */
@@ -111,6 +112,20 @@ header {
 .nav-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(124, 92, 255, 0.35);
+}
+
+
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
+
+.menu-button {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 28px;
+    cursor: pointer;
 }
 
 
@@ -336,7 +351,7 @@ header {
     border: 1px solid #252d46;
     border-radius: 20px;
     padding: 32px 25px;
-    text-align: center;
+    text-align: left;
     transition: 0.35s ease;
 }
 
@@ -359,6 +374,89 @@ header {
 .skill-card p {
     color: #9da3b8;
     font-size: 14px;
+    min-height: 45px;
+}
+
+
+/* =========================
+   SKILL PROGRESS BARS
+========================= */
+
+.skill-bar {
+    width: 100%;
+    height: 10px;
+    margin-top: 22px;
+    background: #252c42;
+    border-radius: 50px;
+    overflow: hidden;
+    position: relative;
+}
+
+.skill-progress {
+    height: 100%;
+    width: 0;
+    border-radius: 50px;
+
+    background: linear-gradient(
+        90deg,
+        #6d4cff,
+        #9b87ff
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    padding-right: 6px;
+
+    animation: skillFill 1.5s ease forwards;
+}
+
+.skill-progress span {
+    font-size: 9px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1;
+}
+
+
+/* Individual Skill Widths */
+
+.html-progress {
+    --skill-width: 80%;
+}
+
+.css-progress {
+    --skill-width: 70%;
+}
+
+.js-progress {
+    --skill-width: 60%;
+}
+
+.git-progress {
+    --skill-width: 60%;
+}
+
+.responsive-progress {
+    --skill-width: 70%;
+}
+
+.problem-progress {
+    --skill-width: 75%;
+}
+
+
+/* Skill Animation */
+
+@keyframes skillFill {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: var(--skill-width);
+    }
 }
 
 
@@ -489,7 +587,25 @@ footer {
 
 
 /* =========================
-   ANIMATION
+   SCROLL REVEAL
+========================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================
+   HERO ANIMATION
 ========================= */
 
 @keyframes fadeUp {
@@ -531,25 +647,62 @@ footer {
 
 
 /* =========================
-   MOBILE
+   MOBILE NAVIGATION
 ========================= */
 
-@media (max-width: 650px) {
+@media (max-width: 750px) {
 
     .navbar {
-        padding: 15px;
+        position: relative;
     }
 
-    .logo {
-        font-size: 22px;
+    .menu-button {
+        display: block;
     }
 
     .nav-links {
-        gap: 12px;
+        display: none;
+
+        position: absolute;
+        top: 70px;
+        left: 15px;
+        right: 15px;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 0;
+
+        background: #131a2e;
+        border: 1px solid #252c42;
+        border-radius: 15px;
+
+        padding: 10px;
+
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-links.active {
+        display: flex;
     }
 
     .nav-links a {
-        font-size: 12px;
+        display: block;
+        padding: 14px 15px;
+        border-radius: 10px;
+        font-size: 15px;
+    }
+
+    .nav-links a::after {
+        display: none;
+    }
+
+    .nav-links a:hover {
+        background: #1c2540;
+    }
+
+    .nav-button {
+        display: none;
     }
 
     .hero {
@@ -581,6 +734,10 @@ footer {
     .skills-grid,
     .projects-grid {
         grid-template-columns: 1fr;
+    }
+
+    .skill-card {
+        padding: 30px 25px;
     }
 
     .project-card {
@@ -625,148 +782,33 @@ footer {
     .contact-buttons {
         width: 100%;
     }
-}
-/* =========================
-   Scroll Animations
-========================= */
 
-.reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.reveal.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-/* =========================
-   Skill Progress Bars
-========================= */
-
-.skill-bar {
-    width: 100%;
-    height: 10px;
-    background: #252c42;
-    border-radius: 20px;
-    margin-top: 20px;
-    overflow: hidden;
-}
-
-.skill-progress {
-    height: 100%;
-    background: #7c5cff;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding-right: 6px;
-    width: 0;
-    animation: skillFill 1.5s ease forwards;
-}
-
-.skill-progress span {
-    font-size: 10px;
-    font-weight: bold;
-    color: #ffffff;
-}
-
-.html-progress {
-    --skill-width: 80%;
-}
-
-.css-progress {
-    --skill-width: 70%;
-}
-
-.js-progress {
-    --skill-width: 60%;
-}
-
-.git-progress {
-    --skill-width: 60%;
-}
-
-.responsive-progress {
-    --skill-width: 70%;
-}
-
-.problem-progress {
-    --skill-width: 75%;
-}
-
-@keyframes skillFill {
-    from {
-        width: 0;
+    .skill-card {
+        padding: 25px 20px;
     }
 
-    to {
-        width: var(--skill-width);
+    .skill-icon {
+        font-size: 38px;
     }
-}
-/* =========================
-   Mobile Menu
-========================= */
-
-.menu-button {
-    display: none;
-    background: transparent;
-    border: none;
-    color: #ffffff;
-    font-size: 28px;
-    cursor: pointer;
 }
 
 
 /* =========================
-   Mobile Navigation
+   ACCESSIBILITY
 ========================= */
 
-@media (max-width: 750px) {
+@media (prefers-reduced-motion: reduce) {
 
-    .navbar {
-        position: relative;
+    html {
+        scroll-behavior: auto;
     }
 
-    .menu-button {
-        display: block;
-    }
-
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 75px;
-        left: 20px;
-        right: 20px;
-
-        flex-direction: column;
-        gap: 0;
-
-        background: #131a2e;
-        border: 1px solid #252c42;
-        border-radius: 15px;
-
-        padding: 10px;
-
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-links a {
-        display: block;
-        padding: 14px 15px;
-        border-radius: 10px;
-        font-size: 15px;
-    }
-
-    .nav-links a:hover {
-        background: #1c2540;
-    }
-
-    .nav-button {
-        display: none;
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }
+```
