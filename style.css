@@ -640,3 +640,67 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
+/* =========================
+   Skill Progress Bars
+========================= */
+
+.skill-bar {
+    width: 100%;
+    height: 10px;
+    background: #252c42;
+    border-radius: 20px;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: #7c5cff;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 6px;
+    width: 0;
+    animation: skillFill 1.5s ease forwards;
+}
+
+.skill-progress span {
+    font-size: 10px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.html-progress {
+    --skill-width: 80%;
+}
+
+.css-progress {
+    --skill-width: 70%;
+}
+
+.js-progress {
+    --skill-width: 60%;
+}
+
+.git-progress {
+    --skill-width: 60%;
+}
+
+.responsive-progress {
+    --skill-width: 70%;
+}
+
+.problem-progress {
+    --skill-width: 75%;
+}
+
+@keyframes skillFill {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: var(--skill-width);
+    }
+}
