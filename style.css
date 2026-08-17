@@ -49,9 +49,9 @@ header {
     margin: auto;
     padding: 18px 25px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    gap: 25px;
+    align-items: center;
+    gap: 20px;
 }
 
 .logo {
@@ -78,6 +78,10 @@ header {
     transition: 0.3s ease;
 }
 
+.nav-links a:hover {
+    color: #ffffff;
+}
+
 .nav-links a::after {
     content: "";
     position: absolute;
@@ -89,10 +93,6 @@ header {
     transition: 0.3s ease;
 }
 
-.nav-links a:hover {
-    color: #ffffff;
-}
-
 .nav-links a:hover::after {
     width: 100%;
 }
@@ -100,10 +100,10 @@ header {
 .nav-button {
     padding: 10px 18px;
     background: #7c5cff;
+    color: #ffffff;
     border-radius: 10px;
     font-weight: 700;
     font-size: 13px;
-    white-space: nowrap;
     transition: 0.3s ease;
 }
 
@@ -166,6 +166,7 @@ header {
     max-width: 850px;
     position: relative;
     z-index: 1;
+    animation: fadeUp 1s ease;
 }
 
 .welcome {
@@ -286,10 +287,9 @@ header {
 .about-card {
     background: linear-gradient(
         145deg,
-        #131a2e,
-        #0e1425
+        rgba(19, 26, 46, 0.95),
+        rgba(13, 18, 34, 0.95)
     );
-
     border: 1px solid #252d46;
     border-radius: 22px;
     padding: 45px;
@@ -341,7 +341,6 @@ header {
         #131a2e,
         #0e1425
     );
-
     border: 1px solid #252d46;
     border-radius: 20px;
     padding: 32px 25px;
@@ -368,10 +367,13 @@ header {
 .skill-card p {
     color: #9da3b8;
     font-size: 14px;
+    min-height: 48px;
 }
 
 
-/* SKILL BARS */
+/* =========================
+   SKILL BARS
+========================= */
 
 .skill-bar {
     width: 100%;
@@ -384,28 +386,58 @@ header {
 
 .skill-progress {
     height: 100%;
-    width: 0;
     background: linear-gradient(
         90deg,
-        #7c5cff,
-        #a99cff
+        #6d4cff,
+        #a28cff
     );
-
     border-radius: 20px;
-
     display: flex;
     align-items: center;
     justify-content: flex-end;
-
     padding-right: 6px;
-
-    transition: width 1.5s ease;
+    width: 0;
+    animation: skillFill 1.5s ease forwards;
 }
 
 .skill-progress span {
     font-size: 10px;
     font-weight: bold;
     color: #ffffff;
+}
+
+.html-progress {
+    --skill-width: 80%;
+}
+
+.css-progress {
+    --skill-width: 70%;
+}
+
+.js-progress {
+    --skill-width: 60%;
+}
+
+.git-progress {
+    --skill-width: 60%;
+}
+
+.responsive-progress {
+    --skill-width: 70%;
+}
+
+.problem-progress {
+    --skill-width: 75%;
+}
+
+@keyframes skillFill {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: var(--skill-width);
+    }
 }
 
 
@@ -429,15 +461,12 @@ header {
         #131a2e,
         #0e1425
     );
-
     border: 1px solid #252d46;
     border-radius: 22px;
     padding: 32px;
-
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
     transition: 0.35s ease;
 }
 
@@ -466,14 +495,14 @@ header {
     color: #8b6cff;
     font-size: 12px;
     font-weight: 800;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 .project-buttons {
     display: flex;
-    flex-wrap: wrap;
     gap: 10px;
-    margin-top: auto;
+    flex-wrap: wrap;
+    margin-top: 18px;
 }
 
 
@@ -488,17 +517,14 @@ header {
 .contact-card {
     max-width: 720px;
     margin: auto;
-
     background: linear-gradient(
         145deg,
         #131a2e,
         #0e1425
     );
-
     border: 1px solid #252d46;
     border-radius: 24px;
     padding: 55px 35px;
-
     transition: 0.35s ease;
 }
 
@@ -545,20 +571,19 @@ footer {
 
 
 /* =========================
-   SCROLL ANIMATIONS
+   ANIMATION
 ========================= */
 
-.reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition:
-        opacity 0.8s ease,
-        transform 0.8s ease;
-}
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
 
-.reveal.show {
-    opacity: 1;
-    transform: translateY(0);
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
@@ -567,10 +592,6 @@ footer {
 ========================= */
 
 @media (max-width: 900px) {
-
-    .navbar {
-        padding: 16px 20px;
-    }
 
     .nav-links {
         gap: 18px;
@@ -588,13 +609,14 @@ footer {
 
 
 /* =========================
-   MOBILE NAVIGATION
+   MOBILE MENU
 ========================= */
 
 @media (max-width: 750px) {
 
     .navbar {
         position: relative;
+        padding: 15px 20px;
     }
 
     .menu-button {
@@ -606,14 +628,13 @@ footer {
         display: none;
 
         position: absolute;
-        top: 72px;
-        left: 15px;
-        right: 15px;
+        top: 75px;
+        left: 20px;
+        right: 20px;
 
         flex-direction: column;
         align-items: stretch;
-
-        gap: 4px;
+        gap: 0;
 
         background: #131a2e;
         border: 1px solid #252c42;
@@ -621,8 +642,7 @@ footer {
 
         padding: 10px;
 
-        box-shadow:
-            0 15px 40px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
     }
 
     .nav-links.active {
@@ -651,10 +671,6 @@ footer {
 ========================= */
 
 @media (max-width: 650px) {
-
-    .logo {
-        font-size: 22px;
-    }
 
     .hero {
         padding: 130px 20px 80px;
@@ -691,15 +707,6 @@ footer {
         padding: 28px;
     }
 
-    .project-buttons {
-        width: 100%;
-    }
-
-    .project-buttons .btn {
-        flex: 1;
-        text-align: center;
-    }
-
     .contact-card {
         padding: 40px 25px;
     }
@@ -727,15 +734,8 @@ footer {
     }
 
     .hero-buttons,
-    .contact-buttons {
-        width: 100%;
-    }
-
+    .contact-buttons,
     .project-buttons {
-        flex-direction: column;
-    }
-
-    .project-buttons .btn {
         width: 100%;
     }
 }
