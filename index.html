@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,11 +6,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Russette | IT Student & Future Web Developer</title>
+    <title>Russette | Future Web Developer</title>
 
     <meta
         name="description"
-        content="Russette's personal portfolio — IT student, future web developer and creative thinker."
+        content="Russette — IT student, future web developer and creative thinker."
     >
 
     <link rel="stylesheet" href="style.css">
@@ -17,11 +18,21 @@
 
 <body>
 
+    <!-- BACKGROUND EFFECTS -->
+    <div class="background">
+        <div class="orb orb-one"></div>
+        <div class="orb orb-two"></div>
+        <div class="grid-background"></div>
+    </div>
+
+
     <!-- NAVIGATION -->
     <header>
         <nav class="navbar">
 
-            <a href="#home" class="logo">Russette.</a>
+            <a href="#home" class="logo">
+                <span>&lt;</span>Russette<span>/&gt;</span>
+            </a>
 
             <div class="nav-links" id="navLinks">
                 <a href="#home">Home</a>
@@ -31,18 +42,18 @@
                 <a href="#contact">Contact</a>
             </div>
 
+            <a href="#contact" class="nav-button">
+                Let's Connect <span>↗</span>
+            </a>
+
             <button
                 class="menu-button"
                 id="menuButton"
-                aria-label="Open menu"
                 type="button"
+                aria-label="Open menu"
             >
                 ☰
             </button>
-
-            <a href="#contact" class="nav-button">
-                Let's Connect
-            </a>
 
         </nav>
     </header>
@@ -55,49 +66,135 @@
 
             <div class="hero-content">
 
-                <p class="welcome">WELCOME TO MY WORLD 👋</p>
+                <div class="status">
+                    <span class="status-dot"></span>
+                    AVAILABLE TO BUILD
+                </div>
 
-                <h1>Hi, I'm <span>Russette</span></h1>
+                <p class="welcome">
+                    WELCOME TO MY WORLD 👋
+                </p>
 
-                <h2>IT Student & Future Web Developer.</h2>
+                <h1>
+                    Hi, I'm
+                    <span class="gradient-text">Russette.</span>
+                </h1>
 
-                <p>
-                    I'm learning how to turn ideas into websites using
-                    HTML, CSS and JavaScript. This is where my journey begins.
+                <h2>
+                    IT Student <span>×</span> Future Web Developer
+                </h2>
+
+                <p class="hero-description">
+                    I turn ideas into interactive experiences using
+                    <strong>HTML</strong>, <strong>CSS</strong> and
+                    <strong>JavaScript</strong>.
+                    This is where my journey begins.
                 </p>
 
                 <div class="hero-buttons">
 
-                    <a href="#about" class="btn primary">
-                        Discover More
+                    <a href="#projects" class="btn primary">
+                        View My Work
+                        <span>→</span>
                     </a>
 
-                    <a href="#projects" class="btn secondary">
-                        View My Work
+                    <a href="#about" class="btn secondary">
+                        Discover More
                     </a>
 
                 </div>
 
+                <div class="hero-tech">
+
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>GitHub</span>
+
+                </div>
+
+            </div>
+
+            <div class="scroll-indicator">
+                <span></span>
+                SCROLL TO EXPLORE
             </div>
 
         </section>
 
 
         <!-- ABOUT -->
-        <section id="about" class="section">
+        <section id="about" class="section reveal">
 
-            <div class="section-title">
-                <p>GET TO KNOW ME</p>
-                <h2>About Me</h2>
-            </div>
+            <div class="section-heading">
 
-            <div class="about-card">
-
-                <div class="about-icon">💻</div>
+                <span class="section-number">01</span>
 
                 <div>
+                    <p>GET TO KNOW ME</p>
+                    <h2>About <span>Me</span></h2>
+                </div>
 
-                    <h3>IT Student & Future Developer</h3>
+            </div>
+
+            <div class="about-layout">
+
+                <div class="about-visual">
+
+                    <div class="code-window">
+
+                        <div class="window-bar">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <div class="code-content">
+
+                            <p><span class="code-purple">const</span> developer = {</p>
+
+                            <p class="indent">
+                                name:
+                                <span class="code-green">"Russette"</span>,
+                            </p>
+
+                            <p class="indent">
+                                role:
+                                <span class="code-green">"Future Developer"</span>,
+                            </p>
+
+                            <p class="indent">
+                                passion:
+                                <span class="code-green">"Building"</span>,
+                            </p>
+
+                            <p class="indent">
+                                mindset:
+                                <span class="code-green">"Keep Learning"</span>
+                            </p>
+
+                            <p>};</p>
+
+                            <p class="code-cursor">_</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="about-content">
+
+                    <div class="mini-label">
+                        <span>💻</span>
+                        MY JOURNEY
+                    </div>
+
+                    <h3>
+                        Learning today.<br>
+                        <span>Building tomorrow.</span>
+                    </h3>
 
                     <p>
                         I'm an IT student with a growing interest in
@@ -113,10 +210,29 @@
                     </p>
 
                     <p>
-                        My goal is to develop real-world skills, create
-                        projects that people can use, and ultimately turn
-                        my skills and ideas into income.
+                        My goal is simple: develop real-world skills,
+                        build things people actually use, and turn my
+                        ideas into something valuable.
                     </p>
+
+                    <div class="about-stats">
+
+                        <div>
+                            <strong>03+</strong>
+                            <span>Projects Built</span>
+                        </div>
+
+                        <div>
+                            <strong>∞</strong>
+                            <span>Ideas Ahead</span>
+                        </div>
+
+                        <div>
+                            <strong>01</strong>
+                            <span>Goal: Build</span>
+                        </div>
+
+                    </div>
 
                 </div>
 
@@ -126,105 +242,145 @@
 
 
         <!-- SKILLS -->
-        <section id="skills" class="section skills-section">
+        <section id="skills" class="section reveal">
 
-            <div class="section-title">
-                <p>WHAT I WORK WITH</p>
-                <h2>My Skills</h2>
+            <div class="section-heading">
+
+                <span class="section-number">02</span>
+
+                <div>
+                    <p>MY TOOLKIT</p>
+                    <h2>What I <span>Work With</span></h2>
+                </div>
+
             </div>
+
 
             <div class="skills-grid">
 
                 <div class="skill-card">
-                    <div class="skill-icon">🌐</div>
-                    <h3>HTML</h3>
-                    <p>Building the structure and content of websites.</p>
 
-                    <div class="skill-bar">
-                        <div class="skill-progress html-progress">
-                            <span>80%</span>
-                        </div>
+                    <div class="skill-top">
+                        <span class="skill-icon">🌐</span>
+                        <span class="skill-level">80%</span>
                     </div>
-                </div>
 
+                    <h3>HTML</h3>
 
-                <div class="skill-card">
-                    <div class="skill-icon">🎨</div>
-                    <h3>CSS</h3>
                     <p>
-                        Creating layouts, designs, animations and
-                        responsive websites.
+                        Building clean structures and meaningful
+                        website content.
                     </p>
 
-                    <div class="skill-bar">
-                        <div class="skill-progress css-progress">
-                            <span>70%</span>
-                        </div>
+                    <div class="skill-line">
+                        <span style="width: 80%"></span>
                     </div>
+
                 </div>
 
 
                 <div class="skill-card">
-                    <div class="skill-icon">⚡</div>
+
+                    <div class="skill-top">
+                        <span class="skill-icon">🎨</span>
+                        <span class="skill-level">70%</span>
+                    </div>
+
+                    <h3>CSS</h3>
+
+                    <p>
+                        Creating layouts, animations and responsive
+                        visual experiences.
+                    </p>
+
+                    <div class="skill-line">
+                        <span style="width: 70%"></span>
+                    </div>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <div class="skill-top">
+                        <span class="skill-icon">⚡</span>
+                        <span class="skill-level">60%</span>
+                    </div>
+
                     <h3>JavaScript</h3>
+
                     <p>
                         Adding functionality and interactive features
                         to websites.
                     </p>
 
-                    <div class="skill-bar">
-                        <div class="skill-progress js-progress">
-                            <span>60%</span>
-                        </div>
+                    <div class="skill-line">
+                        <span style="width: 60%"></span>
                     </div>
+
                 </div>
 
 
                 <div class="skill-card">
-                    <div class="skill-icon">💻</div>
+
+                    <div class="skill-top">
+                        <span class="skill-icon">🐙</span>
+                        <span class="skill-level">60%</span>
+                    </div>
+
                     <h3>Git & GitHub</h3>
+
                     <p>
                         Managing projects, tracking changes and
                         deploying websites.
                     </p>
 
-                    <div class="skill-bar">
-                        <div class="skill-progress git-progress">
-                            <span>60%</span>
-                        </div>
+                    <div class="skill-line">
+                        <span style="width: 60%"></span>
                     </div>
+
                 </div>
 
 
                 <div class="skill-card">
-                    <div class="skill-icon">📱</div>
+
+                    <div class="skill-top">
+                        <span class="skill-icon">📱</span>
+                        <span class="skill-level">70%</span>
+                    </div>
+
                     <h3>Responsive Design</h3>
+
                     <p>
-                        Building websites that work across computers,
-                        tablets and phones.
+                        Building experiences that work across every
+                        screen size.
                     </p>
 
-                    <div class="skill-bar">
-                        <div class="skill-progress responsive-progress">
-                            <span>70%</span>
-                        </div>
+                    <div class="skill-line">
+                        <span style="width: 70%"></span>
                     </div>
+
                 </div>
 
 
                 <div class="skill-card">
-                    <div class="skill-icon">🧠</div>
+
+                    <div class="skill-top">
+                        <span class="skill-icon">🧠</span>
+                        <span class="skill-level">75%</span>
+                    </div>
+
                     <h3>Problem Solving</h3>
+
                     <p>
-                        Breaking problems down and turning ideas
-                        into projects.
+                        Breaking difficult problems down into
+                        manageable solutions.
                     </p>
 
-                    <div class="skill-bar">
-                        <div class="skill-progress problem-progress">
-                            <span>75%</span>
-                        </div>
+                    <div class="skill-line">
+                        <span style="width: 75%"></span>
                     </div>
+
                 </div>
 
             </div>
@@ -233,47 +389,93 @@
 
 
         <!-- PROJECTS -->
-        <section id="projects" class="section projects-section">
+        <section id="projects" class="section reveal">
 
-            <div class="section-title">
-                <p>WHAT I'M BUILDING</p>
-                <h2>My Projects</h2>
+            <div class="section-heading">
+
+                <span class="section-number">03</span>
+
+                <div>
+                    <p>WHAT I'M BUILDING</p>
+                    <h2>Featured <span>Projects</span></h2>
+                </div>
+
             </div>
+
 
             <div class="projects-grid">
 
-                <!-- WEBSITE -->
-                <div class="project-card">
 
-                    <div class="project-icon">🌐</div>
+                <!-- PORTFOLIO -->
+                <article class="project-card featured">
 
-                    <h3>My First Website</h3>
+                    <div class="project-glow"></div>
+
+                    <div class="project-header">
+
+                        <span class="project-icon">🌐</span>
+
+                        <span class="project-number">
+                            01
+                        </span>
+
+                    </div>
+
+                    <span class="project-type">
+                        PORTFOLIO
+                    </span>
+
+                    <h3>
+                        My First Website
+                    </h3>
 
                     <p>
-                        My personal portfolio website, built from scratch
-                        while learning HTML, CSS and JavaScript and
-                        deployed with GitHub Pages.
+                        My personal portfolio built from scratch while
+                        learning HTML, CSS and JavaScript and deployed
+                        with GitHub Pages.
                     </p>
 
-                    <span>HTML • CSS • JavaScript</span>
+                    <div class="project-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
 
-                </div>
+                </article>
 
 
                 <!-- TODO -->
-                <div class="project-card">
+                <article class="project-card">
 
-                    <div class="project-icon">✅</div>
+                    <div class="project-header">
 
-                    <h3>To-Do List App</h3>
+                        <span class="project-icon">✅</span>
+
+                        <span class="project-number">
+                            02
+                        </span>
+
+                    </div>
+
+                    <span class="project-type">
+                        PRODUCTIVITY
+                    </span>
+
+                    <h3>
+                        To-Do List App
+                    </h3>
 
                     <p>
-                        A functional productivity app where users can
-                        add tasks, mark them as completed, delete them
-                        and save their tasks in the browser.
+                        A productivity app where users can add tasks,
+                        complete them, delete them and save tasks
+                        directly in the browser.
                     </p>
 
-                    <span>HTML • CSS • JavaScript</span>
+                    <div class="project-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
 
                     <div class="project-buttons">
 
@@ -281,39 +483,57 @@
                             href="https://russette.github.io/todo-list/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="btn primary"
+                            class="project-btn primary"
                         >
-                            🚀 View Live Project
+                            Live Demo ↗
                         </a>
 
                         <a
                             href="https://github.com/russette/todo-list"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="btn secondary"
+                            class="project-btn"
                         >
-                            💻 View Code
+                            Source Code
                         </a>
 
                     </div>
 
-                </div>
+                </article>
 
 
                 <!-- HABIT TRACKER -->
-                <div class="project-card">
+                <article class="project-card">
 
-                    <div class="project-icon">🔥</div>
+                    <div class="project-header">
 
-                    <h3>Habit Tracker</h3>
+                        <span class="project-icon">🔥</span>
+
+                        <span class="project-number">
+                            03
+                        </span>
+
+                    </div>
+
+                    <span class="project-type">
+                        PRODUCTIVITY
+                    </span>
+
+                    <h3>
+                        Habit Tracker
+                    </h3>
 
                     <p>
-                        A functional habit-tracking app that lets users
-                        create habits, track daily completion and monitor
-                        their progress.
+                        A habit-tracking application that lets users
+                        create habits, track daily completion and
+                        monitor progress.
                     </p>
 
-                    <span>HTML • CSS • JavaScript</span>
+                    <div class="project-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
 
                     <div class="project-buttons">
 
@@ -321,48 +541,82 @@
                             href="https://russette.github.io/habit-tracker/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="btn primary"
+                            class="project-btn primary"
                         >
-                            🚀 View Live Project
+                            Live Demo ↗
                         </a>
 
                         <a
                             href="https://github.com/russette/habit-tracker"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="btn secondary"
+                            class="project-btn"
                         >
-                            💻 View Code
+                            Source Code
                         </a>
 
                     </div>
 
-                </div>
+                </article>
 
             </div>
 
         </section>
 
 
-        <!-- CONTACT -->
-        <section id="contact" class="section contact-section">
+        <!-- CURRENTLY LEARNING -->
+        <section class="learning reveal">
 
-            <div class="section-title">
-                <p>LET'S CONNECT</p>
-                <h2>Let's Work Together</h2>
+            <div class="learning-content">
+
+                <span class="mini-label">
+                    🚀 CURRENTLY LEARNING
+                </span>
+
+                <h2>
+                    The journey doesn't<br>
+                    <span>stop here.</span>
+                </h2>
+
+                <p>
+                    I'm constantly learning new technologies,
+                    experimenting with ideas and building projects
+                    that challenge me to become a better developer.
+                </p>
+
+                <div class="learning-list">
+
+                    <span>JavaScript</span>
+                    <span>Web Development</span>
+                    <span>UI / UX</span>
+                    <span>Entrepreneurship</span>
+
+                </div>
+
             </div>
+
+            <div class="learning-symbol">
+                <span>&lt;/&gt;</span>
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT -->
+        <section id="contact" class="section contact-section reveal">
 
             <div class="contact-card">
 
-                <div class="contact-icon">🚀</div>
+                <div class="contact-orb"></div>
 
-                <h3>Have an idea or opportunity?</h3>
+                <span class="mini-label">
+                    LET'S CONNECT
+                </span>
 
-                <p>
-                    I'm an IT student and aspiring developer who enjoys
-                    learning, building projects and exploring ways
-                    technology can create value.
-                </p>
+                <h2>
+                    Have an idea?
+                    <span>Let's build it.</span>
+                </h2>
 
                 <p>
                     I'm always interested in connecting with people,
@@ -377,14 +631,14 @@
                         rel="noopener noreferrer"
                         class="btn primary"
                     >
-                        💻 GitHub
+                        GitHub ↗
                     </a>
 
                     <a
                         href="mailto:crarcss@gmail.com"
                         class="btn secondary"
                     >
-                        📧 Email Me
+                        Email Me
                     </a>
 
                 </div>
@@ -398,9 +652,19 @@
 
     <!-- FOOTER -->
     <footer>
+
+        <div class="footer-logo">
+            <span>&lt;</span>Russette<span>/&gt;</span>
+        </div>
+
         <p>
             © 2026 Russette. Built with HTML, CSS & JavaScript.
         </p>
+
+        <a href="#home">
+            Back to top ↑
+        </a>
+
     </footer>
 
 
@@ -409,3 +673,4 @@
 </body>
 
 </html>
+```
