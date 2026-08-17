@@ -1,7 +1,7 @@
 ```javascript
-/* =========================
-   MOBILE MENU
-========================= */
+// =========================
+// MOBILE MENU
+// =========================
 
 const menuButton = document.getElementById("menuButton");
 const navLinks = document.getElementById("navLinks");
@@ -12,18 +12,18 @@ if (menuButton && navLinks) {
 
         navLinks.classList.toggle("active");
 
-        const isOpen = navLinks.classList.contains("active");
+        if (navLinks.classList.contains("active")) {
+            menuButton.textContent = "✕";
+            menuButton.setAttribute("aria-label", "Close menu");
+        } else {
+            menuButton.textContent = "☰";
+            menuButton.setAttribute("aria-label", "Open menu");
+        }
 
-        menuButton.textContent = isOpen ? "✕" : "☰";
-
-        menuButton.setAttribute(
-            "aria-expanded",
-            isOpen
-        );
     });
 
 
-    // Close menu after clicking a link
+    // Close menu when a link is clicked
 
     const links = navLinks.querySelectorAll("a");
 
@@ -36,8 +36,8 @@ if (menuButton && navLinks) {
             menuButton.textContent = "☰";
 
             menuButton.setAttribute(
-                "aria-expanded",
-                "false"
+                "aria-label",
+                "Open menu"
             );
 
         });
@@ -47,88 +47,39 @@ if (menuButton && navLinks) {
 }
 
 
-/* =========================
-   SCROLL REVEAL ANIMATION
-========================= */
+// =========================
+// SKILL BAR ANIMATION
+// =========================
 
-const revealElements =
-    document.querySelectorAll(".reveal");
+const skillBars = document.querySelectorAll(".skill-progress");
 
-const revealObserver =
-    new IntersectionObserver(
-        (entries, observer) => {
+const skillObserver = new IntersectionObserver(
+    (entries, observer) => {
 
-            entries.forEach(entry => {
+        entries.forEach(entry => {
 
-                if (entry.isIntersecting) {
+            if (entry.isIntersecting) {
 
-                    entry.target.classList.add("show");
+                entry.target.style.animationPlayState = "running";
 
-                    observer.unobserve(entry.target);
+                observer.unobserve(entry.target);
 
-                }
+            }
 
-            });
+        });
 
-        },
-        {
-            threshold: 0.15
-        }
-    );
+    },
+    {
+        threshold: 0.3
+    }
+);
 
 
-revealElements.forEach(element => {
+skillBars.forEach(bar => {
 
-    revealObserver.observe(element);
+    bar.style.animationPlayState = "paused";
 
-});
-
-
-/* =========================
-   SKILL PROGRESS BARS
-========================= */
-
-const skillCards =
-    document.querySelectorAll(".skill-card");
-
-const skillObserver =
-    new IntersectionObserver(
-        (entries, observer) => {
-
-            entries.forEach(entry => {
-
-                if (entry.isIntersecting) {
-
-                    const progressBars =
-                        entry.target.querySelectorAll(
-                            ".skill-progress"
-                        );
-
-                    progressBars.forEach(bar => {
-
-                        const width =
-                            bar.getAttribute("data-width");
-
-                        bar.style.width = width;
-
-                    });
-
-                    observer.unobserve(entry.target);
-
-                }
-
-            });
-
-        },
-        {
-            threshold: 0.25
-        }
-    );
-
-
-skillCards.forEach(card => {
-
-    skillObserver.observe(card);
+    skillObserver.observe(bar);
 
 });
 ```
