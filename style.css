@@ -1,6 +1,6 @@
 ```css
 /* =========================
-   RESET & GENERAL
+   RESET
 ========================= */
 
 * {
@@ -38,7 +38,7 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(8, 11, 22, 0.82);
+    background: rgba(8, 11, 22, 0.88);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
@@ -49,15 +49,14 @@ header {
     margin: auto;
     padding: 18px 25px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    justify-content: space-between;
+    gap: 25px;
 }
 
 .logo {
     font-size: 26px;
     font-weight: 800;
-    color: #ffffff;
     letter-spacing: -1px;
 }
 
@@ -101,23 +100,17 @@ header {
 .nav-button {
     padding: 10px 18px;
     background: #7c5cff;
-    color: #ffffff;
     border-radius: 10px;
     font-weight: 700;
     font-size: 13px;
-    transition: 0.3s ease;
     white-space: nowrap;
+    transition: 0.3s ease;
 }
 
 .nav-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(124, 92, 255, 0.35);
 }
-
-
-/* =========================
-   MOBILE MENU BUTTON
-========================= */
 
 .menu-button {
     display: none;
@@ -173,7 +166,6 @@ header {
     max-width: 850px;
     position: relative;
     z-index: 1;
-    animation: fadeUp 1s ease;
 }
 
 .welcome {
@@ -294,9 +286,10 @@ header {
 .about-card {
     background: linear-gradient(
         145deg,
-        rgba(19, 26, 46, 0.95),
-        rgba(13, 18, 34, 0.95)
+        #131a2e,
+        #0e1425
     );
+
     border: 1px solid #252d46;
     border-radius: 22px;
     padding: 45px;
@@ -348,10 +341,11 @@ header {
         #131a2e,
         #0e1425
     );
+
     border: 1px solid #252d46;
     border-radius: 20px;
     padding: 32px 25px;
-    text-align: left;
+    text-align: center;
     transition: 0.35s ease;
 }
 
@@ -374,34 +368,30 @@ header {
 .skill-card p {
     color: #9da3b8;
     font-size: 14px;
-    min-height: 45px;
 }
 
 
-/* =========================
-   SKILL PROGRESS BARS
-========================= */
+/* SKILL BARS */
 
 .skill-bar {
     width: 100%;
     height: 10px;
-    margin-top: 22px;
     background: #252c42;
-    border-radius: 50px;
+    border-radius: 20px;
+    margin-top: 22px;
     overflow: hidden;
-    position: relative;
 }
 
 .skill-progress {
     height: 100%;
     width: 0;
-    border-radius: 50px;
-
     background: linear-gradient(
         90deg,
-        #6d4cff,
-        #9b87ff
+        #7c5cff,
+        #a99cff
     );
+
+    border-radius: 20px;
 
     display: flex;
     align-items: center;
@@ -409,54 +399,13 @@ header {
 
     padding-right: 6px;
 
-    animation: skillFill 1.5s ease forwards;
+    transition: width 1.5s ease;
 }
 
 .skill-progress span {
-    font-size: 9px;
-    font-weight: 800;
+    font-size: 10px;
+    font-weight: bold;
     color: #ffffff;
-    line-height: 1;
-}
-
-
-/* Individual Skill Widths */
-
-.html-progress {
-    --skill-width: 80%;
-}
-
-.css-progress {
-    --skill-width: 70%;
-}
-
-.js-progress {
-    --skill-width: 60%;
-}
-
-.git-progress {
-    --skill-width: 60%;
-}
-
-.responsive-progress {
-    --skill-width: 70%;
-}
-
-.problem-progress {
-    --skill-width: 75%;
-}
-
-
-/* Skill Animation */
-
-@keyframes skillFill {
-    from {
-        width: 0;
-    }
-
-    to {
-        width: var(--skill-width);
-    }
 }
 
 
@@ -480,12 +429,15 @@ header {
         #131a2e,
         #0e1425
     );
+
     border: 1px solid #252d46;
     border-radius: 22px;
     padding: 32px;
+
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
     transition: 0.35s ease;
 }
 
@@ -514,11 +466,14 @@ header {
     color: #8b6cff;
     font-size: 12px;
     font-weight: 800;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
 }
 
-.project-card .btn {
-    margin-top: 8px;
+.project-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: auto;
 }
 
 
@@ -533,14 +488,17 @@ header {
 .contact-card {
     max-width: 720px;
     margin: auto;
+
     background: linear-gradient(
         145deg,
         #131a2e,
         #0e1425
     );
+
     border: 1px solid #252d46;
     border-radius: 24px;
     padding: 55px 35px;
+
     transition: 0.35s ease;
 }
 
@@ -587,7 +545,7 @@ footer {
 
 
 /* =========================
-   SCROLL REVEAL
+   SCROLL ANIMATIONS
 ========================= */
 
 .reveal {
@@ -601,23 +559,6 @@ footer {
 .reveal.show {
     opacity: 1;
     transform: translateY(0);
-}
-
-
-/* =========================
-   HERO ANIMATION
-========================= */
-
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 
@@ -658,20 +599,21 @@ footer {
 
     .menu-button {
         display: block;
+        margin-left: auto;
     }
 
     .nav-links {
         display: none;
 
         position: absolute;
-        top: 70px;
+        top: 72px;
         left: 15px;
         right: 15px;
 
         flex-direction: column;
         align-items: stretch;
 
-        gap: 0;
+        gap: 4px;
 
         background: #131a2e;
         border: 1px solid #252c42;
@@ -679,7 +621,8 @@ footer {
 
         padding: 10px;
 
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        box-shadow:
+            0 15px 40px rgba(0, 0, 0, 0.4);
     }
 
     .nav-links.active {
@@ -693,16 +636,24 @@ footer {
         font-size: 15px;
     }
 
-    .nav-links a::after {
-        display: none;
-    }
-
     .nav-links a:hover {
         background: #1c2540;
     }
 
     .nav-button {
         display: none;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+    .logo {
+        font-size: 22px;
     }
 
     .hero {
@@ -736,12 +687,17 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .skill-card {
-        padding: 30px 25px;
-    }
-
     .project-card {
         padding: 28px;
+    }
+
+    .project-buttons {
+        width: 100%;
+    }
+
+    .project-buttons .btn {
+        flex: 1;
+        text-align: center;
     }
 
     .contact-card {
@@ -755,14 +711,6 @@ footer {
 ========================= */
 
 @media (max-width: 420px) {
-
-    .nav-links {
-        gap: 8px;
-    }
-
-    .nav-links a {
-        font-size: 10px;
-    }
 
     .hero h1 {
         font-size: 42px;
@@ -783,32 +731,12 @@ footer {
         width: 100%;
     }
 
-    .skill-card {
-        padding: 25px 20px;
+    .project-buttons {
+        flex-direction: column;
     }
 
-    .skill-icon {
-        font-size: 38px;
-    }
-}
-
-
-/* =========================
-   ACCESSIBILITY
-========================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    html {
-        scroll-behavior: auto;
-    }
-
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
+    .project-buttons .btn {
+        width: 100%;
     }
 }
 ```
