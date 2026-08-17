@@ -1,305 +1,236 @@
-// =========================================
-// RUSSETTE PORTFOLIO — MAIN JAVASCRIPT
-// =========================================
+/* =====================================================
+   RUSSETTE PORTFOLIO — JAVASCRIPT
+   ===================================================== */
 
+document.addEventListener("DOMContentLoaded", () => {
 
-// =========================================
-// MOBILE MENU
-// =========================================
+    /* =================================================
+       SCROLL REVEAL ANIMATIONS
+       ================================================= */
 
-const menuButton = document.getElementById("menuButton");
-const navLinks = document.getElementById("navLinks");
+    const revealElements = document.querySelectorAll(
+        ".section-title, .about-card, .project-card, .contact-card"
+    );
 
-if (menuButton && navLinks) {
-
-    menuButton.addEventListener("click", () => {
-
-        navLinks.classList.toggle("active");
-
-        const isOpen = navLinks.classList.contains("active");
-
-        menuButton.textContent = isOpen ? "✕" : "☰";
-
-        menuButton.setAttribute(
-            "aria-label",
-            isOpen ? "Close menu" : "Open menu"
-        );
-
+    revealElements.forEach((element) => {
+        element.style.opacity = "0";
+        element.style.transform = "translateY(30px)";
+        element.style.transition =
+            "opacity 0.7s ease, transform 0.7s ease";
     });
-
-
-    // Close mobile menu when a navigation link is clicked
-
-    navLinks.querySelectorAll("a").forEach(link => {
-
-        link.addEventListener("click", () => {
-
-            navLinks.classList.remove("active");
-
-            menuButton.textContent = "☰";
-
-            menuButton.setAttribute(
-                "aria-label",
-                "Open menu"
-            );
-
-        });
-
-    });
-
-}
-
-
-// =========================================
-// SCROLL REVEAL
-// =========================================
-
-const revealElements =
-    document.querySelectorAll(".reveal");
-
-if ("IntersectionObserver" in window) {
 
     const revealObserver = new IntersectionObserver(
         (entries, observer) => {
 
-            entries.forEach(entry => {
+            entries.forEach((entry) => {
 
                 if (entry.isIntersecting) {
 
-                    entry.target.classList.add("visible");
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
 
                     observer.unobserve(entry.target);
-
                 }
 
             });
 
         },
         {
-            threshold: 0.12
+            threshold: 0.15
         }
     );
 
-
-    revealElements.forEach(element => {
-
+    revealElements.forEach((element) => {
         revealObserver.observe(element);
+    });
+
+
+    /* =================================================
+       PROJECT CARD STAGGER EFFECT
+       ================================================= */
+
+    const projectCards = document.querySelectorAll(".project-card");
+
+    projectCards.forEach((card, index) => {
+
+        card.style.transitionDelay = `${index * 100}ms`;
 
     });
 
-} else {
 
-    // Fallback for older browsers
+    /* =================================================
+       ACTIVE NAVIGATION
+       ================================================= */
 
-    revealElements.forEach(element => {
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".nav-links a");
 
-        element.classList.add("visible");
+    function updateActiveNav() {
 
-    });
+        let currentSection = "";
 
-}
+        sections.forEach((section) => {
 
+            const sectionTop = section.offsetTop - 150;
+            const sectionHeight = section.offsetHeight;
 
-// =========================================
-// ACTIVE NAVIGATION
-// =========================================
+            if (
+                window.scrollY >= sectionTop &&
+                window.scrollY < sectionTop + sectionHeight
+            ) {
+                currentSection = section.getAttribute("id");
+            }
 
-const sections =
-    document.querySelectorAll("section[id]");
-
-const navItems =
-    document.querySelectorAll(".nav-links a");
-
-if ("IntersectionObserver" in window) {
-
-    const sectionObserver = new IntersectionObserver(
-        (entries) => {
-
-            entries.forEach(entry => {
-
-                if (entry.isIntersecting) {
-
-                    navItems.forEach(link => {
-
-                        link.classList.remove("active");
-
-                    });
-
-
-                    const activeLink =
-                        document.querySelector(
-                            `.nav-links a[href="#${entry.target.id}"]`
-                        );
-
-                    if (activeLink) {
-
-                        activeLink.classList.add("active");
-
-                    }
-
-                }
-
-            });
-
-        },
-        {
-            rootMargin: "-40% 0px -50% 0px"
-        }
-    );
-
-
-    sections.forEach(section => {
-
-        sectionObserver.observe(section);
-
-    });
-
-}
-
-
-// =========================================
-// SMOOTH SCROLL
-// =========================================
-
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-
-    link.addEventListener("click", event => {
-
-        const targetId =
-            link.getAttribute("href");
-
-        if (!targetId || targetId === "#") {
-
-            return;
-
-        }
-
-        const target =
-            document.querySelector(targetId);
-
-        if (target) {
-
-            event.preventDefault();
-
-            target.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-
-        }
-
-    });
-
-});
-
-
-// =========================================
-// SKILL BAR ANIMATION
-// =========================================
-
-const skillBars =
-    document.querySelectorAll(".skill-progress");
-
-if ("IntersectionObserver" in window) {
-
-    const skillObserver = new IntersectionObserver(
-        (entries, observer) => {
-
-            entries.forEach(entry => {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.classList.add("animate");
-
-                    observer.unobserve(entry.target);
-
-                }
-
-            });
-
-        },
-        {
-            threshold: 0.3
-        }
-    );
-
-
-    skillBars.forEach(bar => {
-
-        skillObserver.observe(bar);
-
-    });
-
-} else {
-
-    skillBars.forEach(bar => {
-
-        bar.classList.add("animate");
-
-    });
-
-}
-
-
-// =========================================
-// BACK TO TOP
-// =========================================
-
-const backToTop =
-    document.querySelector(".back-to-top");
-
-if (backToTop) {
-
-    backToTop.addEventListener("click", event => {
-
-        event.preventDefault();
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
         });
 
-    });
+        navLinks.forEach((link) => {
 
-}
+            link.classList.remove("active");
+
+            if (link.getAttribute("href") === `#${currentSection}`) {
+                link.classList.add("active");
+            }
+
+        });
+
+    }
+
+    window.addEventListener("scroll", updateActiveNav);
+
+    updateActiveNav();
 
 
-// =========================================
-// NAVBAR SCROLL EFFECT
-// =========================================
+    /* =================================================
+       NAVBAR SCROLL EFFECT
+       ================================================= */
 
-const header =
-    document.querySelector("header");
-
-if (header) {
+    const header = document.querySelector(".header");
 
     window.addEventListener("scroll", () => {
 
         if (window.scrollY > 50) {
 
-            header.classList.add("scrolled");
+            header.style.boxShadow =
+                "0 10px 30px rgba(0, 0, 0, 0.25)";
 
         } else {
 
-            header.classList.remove("scrolled");
+            header.style.boxShadow = "none";
 
         }
 
     });
 
-}
+
+    /* =================================================
+       BACK TO TOP
+       ================================================= */
+
+    const backToTop = document.querySelector(".back-to-top");
+
+    if (backToTop) {
+
+        backToTop.addEventListener("click", (event) => {
+
+            event.preventDefault();
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        });
+
+    }
 
 
-// =========================================
-// CONSOLE MESSAGE
-// =========================================
+    /* =================================================
+       HERO BUTTON EFFECT
+       ================================================= */
 
-console.log(
-    "%c🚀 Russette Portfolio",
-    "color:#a78bfa;font-size:20px;font-weight:bold;"
-);
+    const buttons = document.querySelectorAll(".btn");
 
-console.log(
-    "%cBuilt with HTML, CSS & JavaScript.",
-    "color:#77778b;font-size:12px;"
-);
+    buttons.forEach((button) => {
+
+        button.addEventListener("mouseenter", () => {
+
+            button.style.transform = "translateY(-4px)";
+
+        });
+
+        button.addEventListener("mouseleave", () => {
+
+            button.style.transform = "translateY(0)";
+
+        });
+
+    });
+
+
+    /* =================================================
+       PROJECT CARD MOUSE EFFECT
+       ================================================= */
+
+    projectCards.forEach((card) => {
+
+        card.addEventListener("mousemove", (event) => {
+
+            const rect = card.getBoundingClientRect();
+
+            const x =
+                event.clientX - rect.left;
+
+            const y =
+                event.clientY - rect.top;
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const rotateX =
+                ((y - centerY) / centerY) * -3;
+
+            const rotateY =
+                ((x - centerX) / centerX) * 3;
+
+            card.style.transform =
+                `perspective(800px)
+                 rotateX(${rotateX}deg)
+                 rotateY(${rotateY}deg)
+                 translateY(-8px)`;
+
+        });
+
+
+        card.addEventListener("mouseleave", () => {
+
+            card.style.transform =
+                "perspective(800px) rotateX(0) rotateY(0) translateY(0)";
+
+        });
+
+    });
+
+
+    /* =================================================
+       CURRENT YEAR
+       ================================================= */
+
+    const footerText = document.querySelector("footer p");
+
+    if (footerText) {
+
+        footerText.innerHTML =
+            `© ${new Date().getFullYear()} Russette. Built with HTML, CSS & JavaScript.`;
+
+    }
+
+
+    /* =================================================
+       CONSOLE MESSAGE
+       ================================================= */
+
+    console.log(
+        "🚀 Welcome to Russette's portfolio!"
+    );
+
+});
