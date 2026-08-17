@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,28 +13,28 @@
 
 <body>
 
-    <!-- =========================
-         Navigation
-    ========================== -->
-
+    <!-- NAVIGATION -->
     <header>
         <nav class="navbar">
 
-            <a href="#home" class="logo">
-                Russette.
-            </a>
+            <a href="#home" class="logo">Russette.</a>
 
             <div class="nav-links" id="navLinks">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-</div>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
 
-<button class="menu-button" id="menuButton" aria-label="Open menu">
-    ☰
-</button>
+            <button
+                class="menu-button"
+                id="menuButton"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
 
             <a href="#contact" class="nav-button">
                 Let's Connect
@@ -43,13 +44,10 @@
     </header>
 
 
-    <!-- =========================
-         HOME
-    ========================== -->
-
+    <!-- HOME -->
     <section id="home" class="hero">
 
-        <div class="hero-content">
+        <div class="hero-content reveal">
 
             <p class="welcome">
                 WELCOME TO MY WORLD 👋
@@ -85,22 +83,15 @@
     </section>
 
 
-    <!-- =========================
-         ABOUT
-    ========================== -->
-
+    <!-- ABOUT -->
     <section id="about" class="section">
 
-        <div class="section-title">
-
+        <div class="section-title reveal">
             <p>GET TO KNOW ME</p>
-
             <h2>About Me</h2>
-
         </div>
 
-
-        <div class="about-card">
+        <div class="about-card reveal">
 
             <div class="about-icon">
                 💻
@@ -138,175 +129,177 @@
     </section>
 
 
-    <!-- =========================
-         SKILLS
-    ========================== -->
+    <!-- SKILLS -->
+    <section id="skills" class="section skills-section">
 
-    <!-- =========================
-     SKILLS
-========================== -->
+        <div class="section-title reveal">
+            <p>WHAT I WORK WITH</p>
+            <h2>My Skills</h2>
+        </div>
 
-<section id="skills" class="section skills-section">
+        <div class="skills-grid">
 
-    <div class="section-title">
 
-        <p>WHAT I WORK WITH</p>
+            <!-- HTML -->
+            <div class="skill-card reveal">
 
-        <h2>My Skills</h2>
+                <div class="skill-icon">🌐</div>
 
-    </div>
+                <h3>HTML</h3>
 
-    <div class="skills-grid">
+                <p>
+                    Building the structure and content of websites.
+                </p>
 
-        <!-- HTML -->
-        <div class="skill-card">
-
-            <div class="skill-icon">🌐</div>
-
-            <h3>HTML</h3>
-
-            <p>
-                Building the structure and content of websites.
-            </p>
-
-            <div class="skill-bar">
-                <div class="skill-progress html-progress">
-                    <span>80%</span>
+                <div class="skill-bar">
+                    <div
+                        class="skill-progress"
+                        data-width="80%"
+                    >
+                        <span>80%</span>
+                    </div>
                 </div>
+
+            </div>
+
+
+            <!-- CSS -->
+            <div class="skill-card reveal">
+
+                <div class="skill-icon">🎨</div>
+
+                <h3>CSS</h3>
+
+                <p>
+                    Creating layouts, designs, animations and
+                    responsive websites.
+                </p>
+
+                <div class="skill-bar">
+                    <div
+                        class="skill-progress"
+                        data-width="70%"
+                    >
+                        <span>70%</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- JAVASCRIPT -->
+            <div class="skill-card reveal">
+
+                <div class="skill-icon">⚡</div>
+
+                <h3>JavaScript</h3>
+
+                <p>
+                    Adding functionality and interactive features
+                    to websites.
+                </p>
+
+                <div class="skill-bar">
+                    <div
+                        class="skill-progress"
+                        data-width="60%"
+                    >
+                        <span>60%</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- GIT & GITHUB -->
+            <div class="skill-card reveal">
+
+                <div class="skill-icon">💻</div>
+
+                <h3>Git & GitHub</h3>
+
+                <p>
+                    Managing projects, tracking changes and
+                    deploying websites.
+                </p>
+
+                <div class="skill-bar">
+                    <div
+                        class="skill-progress"
+                        data-width="60%"
+                    >
+                        <span>60%</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- RESPONSIVE DESIGN -->
+            <div class="skill-card reveal">
+
+                <div class="skill-icon">📱</div>
+
+                <h3>Responsive Design</h3>
+
+                <p>
+                    Building websites that work across computers,
+                    tablets and phones.
+                </p>
+
+                <div class="skill-bar">
+                    <div
+                        class="skill-progress"
+                        data-width="70%"
+                    >
+                        <span>70%</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- PROBLEM SOLVING -->
+            <div class="skill-card reveal">
+
+                <div class="skill-icon">🧠</div>
+
+                <h3>Problem Solving</h3>
+
+                <p>
+                    Breaking problems down and turning ideas
+                    into projects.
+                </p>
+
+                <div class="skill-bar">
+                    <div
+                        class="skill-progress"
+                        data-width="75%"
+                    >
+                        <span>75%</span>
+                    </div>
+                </div>
+
             </div>
 
         </div>
 
-
-        <!-- CSS -->
-        <div class="skill-card">
-
-            <div class="skill-icon">🎨</div>
-
-            <h3>CSS</h3>
-
-            <p>
-                Creating layouts, designs, animations and
-                responsive websites.
-            </p>
-
-            <div class="skill-bar">
-                <div class="skill-progress css-progress">
-                    <span>70%</span>
-                </div>
-            </div>
-
-        </div>
+    </section>
 
 
-        <!-- JavaScript -->
-        <div class="skill-card">
-
-            <div class="skill-icon">⚡</div>
-
-            <h3>JavaScript</h3>
-
-            <p>
-                Adding functionality and interactive features
-                to websites.
-            </p>
-
-            <div class="skill-bar">
-                <div class="skill-progress js-progress">
-                    <span>60%</span>
-                </div>
-            </div>
-
-        </div>
-
-
-        <!-- Git & GitHub -->
-        <div class="skill-card">
-
-            <div class="skill-icon">💻</div>
-
-            <h3>Git & GitHub</h3>
-
-            <p>
-                Managing projects, tracking changes and
-                deploying websites.
-            </p>
-
-            <div class="skill-bar">
-                <div class="skill-progress git-progress">
-                    <span>60%</span>
-                </div>
-            </div>
-
-        </div>
-
-
-        <!-- Responsive Design -->
-        <div class="skill-card">
-
-            <div class="skill-icon">📱</div>
-
-            <h3>Responsive Design</h3>
-
-            <p>
-                Building websites that work across computers,
-                tablets and phones.
-            </p>
-
-            <div class="skill-bar">
-                <div class="skill-progress responsive-progress">
-                    <span>70%</span>
-                </div>
-            </div>
-
-        </div>
-
-
-        <!-- Problem Solving -->
-        <div class="skill-card">
-
-            <div class="skill-icon">🧠</div>
-
-            <h3>Problem Solving</h3>
-
-            <p>
-                Breaking problems down and turning ideas
-                into projects.
-            </p>
-
-            <div class="skill-bar">
-                <div class="skill-progress problem-progress">
-                    <span>75%</span>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-    <!-- =========================
-         PROJECTS
-    ========================== -->
-
+    <!-- PROJECTS -->
     <section id="projects" class="section projects-section">
 
-        <div class="section-title">
-
+        <div class="section-title reveal">
             <p>WHAT I'M BUILDING</p>
-
             <h2>My Projects</h2>
-
         </div>
-
 
         <div class="projects-grid">
 
 
             <!-- MY WEBSITE -->
-
-            <div class="project-card">
+            <div class="project-card reveal">
 
                 <div class="project-icon">
                     🌐
@@ -330,8 +323,7 @@
 
 
             <!-- TO-DO LIST -->
-
-            <div class="project-card">
+            <div class="project-card reveal">
 
                 <div class="project-icon">
                     ✅
@@ -351,31 +343,33 @@
                     HTML • CSS • JavaScript
                 </span>
 
-                <br>
-                <br>
+                <div class="project-buttons">
 
-                <a
-                    href="https://russette.github.io/todo-list/"
-                    target="_blank"
-                    class="btn primary"
-                >
-                    🚀 View Live Project
-                </a>
+                    <a
+                        href="https://russette.github.io/todo-list/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn primary"
+                    >
+                        🚀 View Live Project
+                    </a>
 
-                <a
-                    href="https://github.com/russette/todo-list"
-                    target="_blank"
-                    class="btn secondary"
-                >
-                    💻 View Code
-                </a>
+                    <a
+                        href="https://github.com/russette/todo-list"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn secondary"
+                    >
+                        💻 View Code
+                    </a>
+
+                </div>
 
             </div>
 
 
             <!-- HABIT TRACKER -->
-
-            <div class="project-card">
+            <div class="project-card reveal">
 
                 <div class="project-icon">
                     🔥
@@ -395,24 +389,27 @@
                     HTML • CSS • JavaScript
                 </span>
 
-                <br>
-                <br>
+                <div class="project-buttons">
 
-                <a
-                    href="https://russette.github.io/habit-tracker/"
-                    target="_blank"
-                    class="btn primary"
-                >
-                    🚀 View Live Project
-                </a>
+                    <a
+                        href="https://russette.github.io/habit-tracker/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn primary"
+                    >
+                        🚀 View Live Project
+                    </a>
 
-                <a
-                    href="https://github.com/russette/habit-tracker"
-                    target="_blank"
-                    class="btn secondary"
-                >
-                    💻 View Code
-                </a>
+                    <a
+                        href="https://github.com/russette/habit-tracker"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn secondary"
+                    >
+                        💻 View Code
+                    </a>
+
+                </div>
 
             </div>
 
@@ -422,13 +419,10 @@
     </section>
 
 
-    <!-- =========================
-         CONTACT
-    ========================== -->
-
+    <!-- CONTACT -->
     <section id="contact" class="section contact-section">
 
-        <div class="section-title">
+        <div class="section-title reveal">
 
             <p>LET'S CONNECT</p>
 
@@ -436,8 +430,7 @@
 
         </div>
 
-
-        <div class="contact-card">
+        <div class="contact-card reveal">
 
             <div class="contact-icon">
                 🚀
@@ -458,12 +451,12 @@
                 learning new skills and working on interesting ideas.
             </p>
 
-
             <div class="contact-buttons">
 
                 <a
                     href="https://github.com/russette"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="btn primary"
                 >
                     💻 GitHub
@@ -483,10 +476,7 @@
     </section>
 
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
+    <!-- FOOTER -->
     <footer>
 
         <p>
@@ -501,3 +491,4 @@
 </body>
 
 </html>
+```
