@@ -22,8 +22,7 @@ if (menuButton && navLinks) {
 
     });
 
-
-    // Close menu when a link is clicked
+    // Close mobile menu when a link is clicked
 
     const links = navLinks.querySelectorAll("a");
 
@@ -53,33 +52,78 @@ if (menuButton && navLinks) {
 
 const skillBars = document.querySelectorAll(".skill-progress");
 
-const skillObserver = new IntersectionObserver(
-    (entries, observer) => {
+if (skillBars.length > 0) {
 
-        entries.forEach(entry => {
+    const skillObserver = new IntersectionObserver(
+        (entries, observer) => {
 
-            if (entry.isIntersecting) {
+            entries.forEach(entry => {
 
-                entry.target.style.animationPlayState = "running";
+                if (entry.isIntersecting) {
 
-                observer.unobserve(entry.target);
+                    entry.target.style.animationPlayState = "running";
 
-            }
+                    observer.unobserve(entry.target);
 
-        });
+                }
 
-    },
-    {
-        threshold: 0.3
-    }
+            });
+
+        },
+        {
+            threshold: 0.3
+        }
+    );
+
+    skillBars.forEach(bar => {
+
+        bar.style.animationPlayState = "paused";
+
+        skillObserver.observe(bar);
+
+    });
+
+}
+
+
+// =========================
+// SCROLL REVEAL ANIMATION
+// =========================
+
+const revealElements = document.querySelectorAll(
+    ".about-card, .skill-card, .project-card, .contact-card"
 );
 
+if (revealElements.length > 0) {
 
-skillBars.forEach(bar => {
+    revealElements.forEach(element => {
+        element.classList.add("reveal");
+    });
 
-    bar.style.animationPlayState = "paused";
+    const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
 
-    skillObserver.observe(bar);
+            entries.forEach(entry => {
 
-});
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("show");
+
+                    observer.unobserve(entry.target);
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.15
+        }
+    );
+
+    revealElements.forEach(element => {
+        revealObserver.observe(element);
+    });
+
+}
 ```
