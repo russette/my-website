@@ -1189,3 +1189,134 @@ footer {
     }
 
 }
+/* FEATURED PROJECT */
+
+.featured-project {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    align-items: center;
+
+    background: linear-gradient(145deg, #151515, #0c0c0c);
+
+    border: 1px solid rgba(0, 255, 136, 0.18);
+    border-radius: 25px;
+
+    padding: 40px;
+    margin-bottom: 30px;
+
+    overflow: hidden;
+    position: relative;
+
+    transition: 0.3s ease;
+}
+
+.featured-project:hover {
+    transform: translateY(-6px);
+    border-color: rgba(0, 255, 136, 0.5);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.45);
+}
+
+.featured-content {
+    position: relative;
+    z-index: 2;
+}
+
+.featured-label {
+    display: inline-block;
+
+    color: var(--accent);
+
+    border: 1px solid rgba(0, 255, 136, 0.25);
+
+    background: rgba(0, 255, 136, 0.06);
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    font-size: 0.65rem;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 25px;
+}
+
+.featured-content h3 {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.featured-content > p {
+    max-width: 520px;
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+}
+
+.featured-preview {
+    min-height: 330px;
+
+    border-radius: 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background: linear-gradient(145deg, #151515, #090909);
+}
+
+.preview-task {
+    background: #151515;
+
+    border: 1px solid #252525;
+
+    border-radius: 7px;
+
+    padding: 11px 13px;
+
+    color: #aaaaaa;
+
+    font-size: 0.72rem;
+
+    margin-bottom: 7px;
+}
+
+
+/* FEATURED PROJECT MOBILE */
+
+@media (max-width: 800px) {
+
+    .featured-project {
+        grid-template-columns: 1fr;
+        padding: 30px;
+    }
+
+    .featured-preview {
+        min-height: 280px;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .featured-project {
+        padding: 22px;
+    }
+
+    .featured-content h3 {
+        font-size: 2rem;
+    }
+
+    .featured-preview {
+        min-height: 250px;
+        padding: 22px;
+    }
+
+}
