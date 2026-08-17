@@ -41,7 +41,7 @@ header {
     background: rgba(8, 11, 22, 0.88);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .navbar {
@@ -49,15 +49,15 @@ header {
     margin: auto;
     padding: 18px 25px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
 }
 
 .logo {
-    font-size: 26px;
+    font-size: 27px;
     font-weight: 800;
     letter-spacing: -1px;
+    margin-right: auto;
 }
 
 .logo::first-letter {
@@ -100,10 +100,10 @@ header {
 .nav-button {
     padding: 10px 18px;
     background: #7c5cff;
-    color: #ffffff;
     border-radius: 10px;
-    font-weight: 700;
     font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
     transition: 0.3s ease;
 }
 
@@ -139,12 +139,12 @@ header {
     background:
         radial-gradient(
             circle at 15% 20%,
-            rgba(124, 92, 255, 0.25),
+            rgba(124, 92, 255, 0.28),
             transparent 30%
         ),
         radial-gradient(
             circle at 85% 80%,
-            rgba(36, 112, 190, 0.20),
+            rgba(36, 112, 190, 0.22),
             transparent 30%
         ),
         #080b16;
@@ -156,7 +156,7 @@ header {
     width: 500px;
     height: 500px;
     border-radius: 50%;
-    border: 1px solid rgba(124, 92, 255, 0.08);
+    border: 1px solid rgba(124, 92, 255, 0.10);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -287,8 +287,8 @@ header {
 .about-card {
     background: linear-gradient(
         145deg,
-        rgba(19, 26, 46, 0.95),
-        rgba(13, 18, 34, 0.95)
+        #131a2e,
+        #0e1425
     );
     border: 1px solid #252d46;
     border-radius: 22px;
@@ -302,7 +302,7 @@ header {
 .about-card:hover {
     transform: translateY(-6px);
     border-color: #7c5cff;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
 }
 
 .about-icon {
@@ -351,7 +351,7 @@ header {
 .skill-card:hover {
     transform: translateY(-8px);
     border-color: #7c5cff;
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
 }
 
 .skill-icon {
@@ -386,6 +386,7 @@ header {
 
 .skill-progress {
     height: 100%;
+    width: 0;
     background: linear-gradient(
         90deg,
         #6d4cff,
@@ -396,7 +397,6 @@ header {
     align-items: center;
     justify-content: flex-end;
     padding-right: 6px;
-    width: 0;
     animation: skillFill 1.5s ease forwards;
 }
 
@@ -484,259 +484,4 @@ header {
 .project-card h3 {
     font-size: 22px;
     margin-bottom: 12px;
-}
-
-.project-card p {
-    color: #9da3b8;
-    margin-bottom: 18px;
-}
-
-.project-card span {
-    color: #8b6cff;
-    font-size: 12px;
-    font-weight: 800;
-    margin-bottom: 5px;
-}
-
-.project-buttons {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-top: 18px;
-}
-
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact-section {
-    text-align: center;
-}
-
-.contact-card {
-    max-width: 720px;
-    margin: auto;
-    background: linear-gradient(
-        145deg,
-        #131a2e,
-        #0e1425
-    );
-    border: 1px solid #252d46;
-    border-radius: 24px;
-    padding: 55px 35px;
-    transition: 0.35s ease;
-}
-
-.contact-card:hover {
-    border-color: #7c5cff;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
-}
-
-.contact-icon {
-    font-size: 48px;
-    margin-bottom: 15px;
-}
-
-.contact-card h3 {
-    font-size: 29px;
-    margin-bottom: 15px;
-}
-
-.contact-card p {
-    color: #9da3b8;
-    margin-bottom: 20px;
-}
-
-.contact-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 14px;
-    flex-wrap: wrap;
-    margin-top: 25px;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    text-align: center;
-    padding: 30px 20px;
-    border-top: 1px solid #20263b;
-    color: #6f7589;
-    font-size: 13px;
-}
-
-
-/* =========================
-   ANIMATION
-========================= */
-
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-/* =========================
-   TABLET
-========================= */
-
-@media (max-width: 900px) {
-
-    .nav-links {
-        gap: 18px;
-    }
-
-    .nav-button {
-        display: none;
-    }
-
-    .skills-grid,
-    .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-
-/* =========================
-   MOBILE MENU
-========================= */
-
-@media (max-width: 750px) {
-
-    .navbar {
-        position: relative;
-        padding: 15px 20px;
-    }
-
-    .menu-button {
-        display: block;
-        margin-left: auto;
-    }
-
-    .nav-links {
-        display: none;
-
-        position: absolute;
-        top: 75px;
-        left: 20px;
-        right: 20px;
-
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-
-        background: #131a2e;
-        border: 1px solid #252c42;
-        border-radius: 15px;
-
-        padding: 10px;
-
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-links a {
-        display: block;
-        padding: 14px 15px;
-        border-radius: 10px;
-        font-size: 15px;
-    }
-
-    .nav-links a:hover {
-        background: #1c2540;
-    }
-
-    .nav-button {
-        display: none;
-    }
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 650px) {
-
-    .hero {
-        padding: 130px 20px 80px;
-    }
-
-    .hero h1 {
-        font-size: 48px;
-        letter-spacing: -2px;
-    }
-
-    .hero h2 {
-        font-size: 21px;
-    }
-
-    .hero-content > p:not(.welcome) {
-        font-size: 15px;
-    }
-
-    .section {
-        padding: 80px 20px;
-    }
-
-    .about-card {
-        flex-direction: column;
-        padding: 30px;
-    }
-
-    .skills-grid,
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .project-card {
-        padding: 28px;
-    }
-
-    .contact-card {
-        padding: 40px 25px;
-    }
-}
-
-
-/* =========================
-   SMALL PHONES
-========================= */
-
-@media (max-width: 420px) {
-
-    .hero h1 {
-        font-size: 42px;
-    }
-
-    .welcome {
-        font-size: 11px;
-        letter-spacing: 3px;
-    }
-
-    .btn {
-        width: 100%;
-        text-align: center;
-    }
-
-    .hero-buttons,
-    .contact-buttons,
-    .project-buttons {
-        width: 100%;
-    }
-}
 ```
