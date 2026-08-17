@@ -33,3 +33,23 @@ const revealObserver = new IntersectionObserver(function(entries) {
 revealElements.forEach(function(element) {
     revealObserver.observe(element);
 });
+/* =========================
+   Mobile Menu
+========================= */
+
+const menuButton = document.getElementById("menuButton");
+const navLinks = document.getElementById("navLinks");
+
+menuButton.addEventListener("click", function () {
+    navLinks.classList.toggle("active");
+});
+
+/* Close menu when a link is clicked */
+
+const navItems = navLinks.querySelectorAll("a");
+
+navItems.forEach(function (item) {
+    item.addEventListener("click", function () {
+        navLinks.classList.remove("active");
+    });
+});
