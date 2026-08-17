@@ -1,6 +1,7 @@
-// =========================
+```javascript
+// =========================================
 // MOBILE MENU
-// =========================
+// =========================================
 
 const menuButton = document.getElementById("menuButton");
 const navLinks = document.getElementById("navLinks");
@@ -12,21 +13,29 @@ if (menuButton && navLinks) {
         navLinks.classList.toggle("active");
 
         if (navLinks.classList.contains("active")) {
+
             menuButton.textContent = "✕";
-            menuButton.setAttribute("aria-label", "Close menu");
+            menuButton.setAttribute(
+                "aria-label",
+                "Close menu"
+            );
+
         } else {
+
             menuButton.textContent = "☰";
-            menuButton.setAttribute("aria-label", "Open menu");
+            menuButton.setAttribute(
+                "aria-label",
+                "Open menu"
+            );
+
         }
 
     });
 
 
-    // Close mobile menu when a link is clicked
+    // Close menu after clicking a link
 
-    const links = navLinks.querySelectorAll("a");
-
-    links.forEach(link => {
+    navLinks.querySelectorAll("a").forEach(link => {
 
         link.addEventListener("click", () => {
 
@@ -46,48 +55,131 @@ if (menuButton && navLinks) {
 }
 
 
-// =========================
-// SKILL BAR ANIMATION
-// =========================
+// =========================================
+// SCROLL REVEAL
+// =========================================
 
-const skillBars = document.querySelectorAll(".skill-progress");
+const revealElements =
+    document.querySelectorAll(".reveal");
 
-if ("IntersectionObserver" in window) {
+const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
 
-    const skillObserver = new IntersectionObserver(
-        (entries, observer) => {
+        entries.forEach(entry => {
 
-            entries.forEach(entry => {
+            if (entry.isIntersecting) {
 
-                if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
 
-                    entry.target.style.animationPlayState = "running";
+                observer.unobserve(entry.target);
 
-                    observer.unobserve(entry.target);
+            }
 
+        });
+
+    },
+    {
+        threshold: 0.12
+    }
+);
+
+
+revealElements.forEach(element => {
+    revealObserver.observe(element);
+});
+
+
+// =========================================
+// ACTIVE NAVIGATION
+// =========================================
+
+const sections =
+    document.querySelectorAll("section[id]");
+
+const navItems =
+    document.querySelectorAll(".nav-links a");
+
+const sectionObserver = new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                navItems.forEach(link => {
+                    link.classList.remove("active");
+                });
+
+                const activeLink =
+                    document.querySelector(
+                        `.nav-links a[href="#${entry.target.id}"]`
+                    );
+
+                if (activeLink) {
+                    activeLink.classList.add("active");
                 }
 
+            }
+
+        });
+
+    },
+    {
+        rootMargin: "-40% 0px -50% 0px"
+    }
+);
+
+
+sections.forEach(section => {
+    sectionObserver.observe(section);
+});
+
+
+// =========================================
+// SMOOTH SCROLL
+// =========================================
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+    link.addEventListener("click", event => {
+
+        const targetId =
+            link.getAttribute("href");
+
+        if (targetId === "#") {
+            return;
+        }
+
+        const target =
+            document.querySelector(targetId);
+
+        if (target) {
+
+            event.preventDefault();
+
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
             });
 
-        },
-        {
-            threshold: 0.3
         }
-    );
-
-
-    skillBars.forEach(bar => {
-
-        bar.style.animationPlayState = "paused";
-
-        skillObserver.observe(bar);
 
     });
 
-} else {
+});
 
-    skillBars.forEach(bar => {
-        bar.style.animationPlayState = "running";
-    });
 
-}
+// =========================================
+// CONSOLE MESSAGE
+// =========================================
+
+console.log(
+    "%c🚀 Russette Portfolio",
+    "color:#a78bfa;font-size:20px;font-weight:bold;"
+);
+
+console.log(
+    "%cBuilt with HTML, CSS & JavaScript.",
+    "color:#77778b;font-size:12px;"
+);
+```
