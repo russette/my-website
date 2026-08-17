@@ -10,16 +10,17 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>
-        Russette | IT Student & Future Web Developer
-    </title>
+    <title>Kirk Russette | Web Developer</title>
 
     <meta
         name="description"
-        content="Russette is an IT student and future web developer building interactive websites and useful web applications."
+        content="Kirk Russette — IT student, web developer and cybersecurity enthusiast."
     >
 
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
 </head>
 
@@ -27,314 +28,360 @@
 <body>
 
 
-    <!-- ================= HEADER ================= -->
+<!-- ================= HEADER ================= -->
 
-    <header class="header">
+<header class="header">
 
-        <nav class="navbar">
+    <nav class="navbar">
 
-            <a href="#home" class="logo">
-                Russette<span>.</span>
+        <a
+            href="#home"
+            class="logo"
+        >
+            Russette<span>.</span>
+        </a>
+
+
+        <button
+            id="menu-toggle"
+            class="menu-toggle"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
+
+
+        <div
+            id="nav-links"
+            class="nav-links"
+        >
+
+            <a href="#home">
+                Home
             </a>
 
+            <a href="#about">
+                About
+            </a>
 
-            <button
-                class="menu-toggle"
-                id="menu-toggle"
-                aria-label="Open navigation menu"
-                aria-expanded="false"
+            <a href="#skills">
+                Skills
+            </a>
+
+            <a href="#projects">
+                Projects
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </div>
+
+
+        <a
+            href="#contact"
+            class="nav-button"
+        >
+            Let's Connect ↗
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ================= HERO ================= -->
+
+<main>
+
+<section
+    id="home"
+    class="hero"
+>
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            AVAILABLE TO BUILD
+        </div>
+
+
+        <p class="welcome">
+            WELCOME TO MY WORLD 👋
+        </p>
+
+
+        <h1>
+            Hi, I'm
+            <span>
+                Russette.
+            </span>
+        </h1>
+
+
+        <h2>
+            IT Student × Future Web Developer
+        </h2>
+
+
+        <p class="hero-description">
+            I turn ideas into interactive experiences
+            using HTML, CSS and JavaScript.
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="#projects"
+                class="btn primary"
             >
-                ☰
-            </button>
-
-
-            <div
-                class="nav-links"
-                id="nav-links"
-            >
-
-                <a href="#home">Home</a>
-
-                <a href="#about">About</a>
-
-                <a href="#skills">Skills</a>
-
-                <a href="#projects">Projects</a>
-
-                <a href="#contact">Contact</a>
-
-            </div>
+                View My Projects ↗
+            </a>
 
 
             <a
                 href="#contact"
-                class="nav-button"
+                class="btn secondary"
             >
-                Let's Connect ↗
+                Let's Talk
             </a>
 
-        </nav>
 
-    </header>
+            <a
+                href="cv.pdf"
+                class="btn secondary"
+                download
+            >
+                Download CV ↓
+            </a>
 
+        </div>
 
+    </div>
 
-    <!-- ================= MAIN ================= -->
-
-    <main>
-
-
-        <!-- ================= HOME ================= -->
-
-        <section
-            id="home"
-            class="hero section"
-        >
-
-            <div class="hero-content">
-
-                <p class="eyebrow">
-                    AVAILABLE TO BUILD
-                </p>
-
-                <p class="welcome">
-                    WELCOME TO MY WORLD 👋
-                </p>
-
-                <h1>
-                    Hi, I'm <span>Russette.</span>
-                </h1>
-
-                <h2>
-                    IT Student × Future Web Developer
-                </h2>
-
-                <p class="hero-description">
-                    I turn ideas into interactive experiences
-                    using HTML, CSS and JavaScript.
-                </p>
+</section>
 
 
-                <div class="hero-buttons">
 
-                    <a
-                        href="#projects"
-                        class="btn primary"
-                    >
-                        View My Projects ↗
-                    </a>
+<!-- ================= ABOUT ================= -->
 
-                    <a
-                        href="#contact"
-                        class="btn secondary"
-                    >
-                        Let's Talk
-                    </a>
+<section
+    id="about"
+    class="section"
+>
 
-                </div>
+    <div class="section-title">
 
+        <p>
+            GET TO KNOW ME
+        </p>
+
+        <h2>
+            About Me
+        </h2>
+
+    </div>
+
+
+    <div class="about-card">
+
+        <div class="about-icon">
+            💻
+        </div>
+
+
+        <div class="about-text">
+
+            <p>
+                I'm an IT student and future web developer
+                who enjoys learning how technology can turn
+                ideas into real-world experiences.
+            </p>
+
+
+            <p>
+                I've been creating websites since high school
+                and I'm continuing to develop my skills through
+                practical projects.
+            </p>
+
+
+            <p>
+                I'm interested in entrepreneurship and creating
+                useful applications such as To-Do Lists,
+                Habit Trackers and, eventually, even my own
+                social media platform.
+            </p>
+
+
+            <p>
+                I'm also interested in cybersecurity and
+                ethical hacking, and I'm currently learning
+                more about the field.
+            </p>
+
+
+            <p>
+                I'm also a big fan of gaming 🎮.
+                My goal is to develop real-world skills,
+                create projects that people can use, and
+                ultimately turn my skills and ideas into income.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= SKILLS ================= -->
+
+<section
+    id="skills"
+    class="section"
+>
+
+    <div class="section-title">
+
+        <p>
+            WHAT I WORK WITH
+        </p>
+
+        <h2>
+            My Skills
+        </h2>
+
+    </div>
+
+
+    <div class="skills-grid">
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                🌐
             </div>
 
-        </section>
+            <h3>
+                HTML
+            </h3>
+
+            <p>
+                Building structured and accessible
+                web pages.
+            </p>
+
+        </div>
 
 
 
-        <!-- ================= ABOUT ================= -->
+        <div class="skill-card">
 
-        <section
-            id="about"
-            class="section about-section"
-        >
-
-            <div class="section-title">
-
-                <p>
-                    GET TO KNOW ME
-                </p>
-
-                <h2>
-                    About Me
-                </h2>
-
+            <div class="skill-icon">
+                🎨
             </div>
 
+            <h3>
+                CSS
+            </h3>
 
-            <div class="about-card">
+            <p>
+                Creating responsive layouts,
+                animations and modern designs.
+            </p>
 
-                <div class="about-icon">
-                    💻
-                </div>
+        </div>
 
 
-                <div class="about-text">
 
-                    <p>
-                        I'm an IT student and future web developer
-                        who enjoys learning how technology can turn
-                        ideas into real-world experiences.
-                    </p>
+        <div class="skill-card">
 
-                    <p>
-                        I'm interested in entrepreneurship and
-                        creating useful applications such as
-                        To-Do Lists, Habit Trackers and,
-                        eventually, even my own social media platform.
-                    </p>
-
-                    <p>
-                        I'm also a big fan of gaming 🎮.
-                        My goal is to develop real-world skills,
-                        create projects that people can use,
-                        and ultimately turn my skills and ideas
-                        into income.
-                    </p>
-
-                </div>
-
+            <div class="skill-icon">
+                ⚡
             </div>
 
-        </section>
+            <h3>
+                JavaScript
+            </h3>
+
+            <p>
+                Adding interaction and functionality
+                to web applications.
+            </p>
+
+        </div>
 
 
 
-        <!-- ================= SKILLS ================= -->
+        <div class="skill-card">
 
-        <section
-            id="skills"
-            class="section skills-section"
-        >
-
-            <div class="section-title">
-
-                <p>
-                    WHAT I WORK WITH
-                </p>
-
-                <h2>
-                    My Skills
-                </h2>
-
+            <div class="skill-icon">
+                🐙
             </div>
 
+            <h3>
+                Git & GitHub
+            </h3>
 
-            <div class="skills-grid">
+            <p>
+                Managing projects and deploying
+                websites with GitHub.
+            </p>
 
-
-                <div class="skill-card">
-
-                    <div class="skill-icon">
-                        🌐
-                    </div>
-
-                    <h3>
-                        HTML5
-                    </h3>
-
-                    <p>
-                        Building clean and structured
-                        web pages.
-                    </p>
-
-                </div>
+        </div>
 
 
-                <div class="skill-card">
 
-                    <div class="skill-icon">
-                        🎨
-                    </div>
+        <div class="skill-card">
 
-                    <h3>
-                        CSS3
-                    </h3>
-
-                    <p>
-                        Creating responsive and modern
-                        website designs.
-                    </p>
-
-                </div>
-
-
-                <div class="skill-card">
-
-                    <div class="skill-icon">
-                        ⚡
-                    </div>
-
-                    <h3>
-                        JavaScript
-                    </h3>
-
-                    <p>
-                        Adding interaction and functionality
-                        to websites.
-                    </p>
-
-                </div>
-
-
-                <div class="skill-card">
-
-                    <div class="skill-icon">
-                        🐙
-                    </div>
-
-                    <h3>
-                        Git & GitHub
-                    </h3>
-
-                    <p>
-                        Managing code and deploying projects
-                        online.
-                    </p>
-
-                </div>
-
-
-                <div class="skill-card">
-
-                    <div class="skill-icon">
-                        📱
-                    </div>
-
-                    <h3>
-                        Responsive Design
-                    </h3>
-
-                    <p>
-                        Building websites that work across
-                        different devices.
-                    </p>
-
-                </div>
-
-
-                <div class="skill-card">
-
-                    <div class="skill-icon">
-                        💡
-                    </div>
-
-                    <h3>
-                        Problem Solving
-                    </h3>
-
-                    <p>
-                        Turning ideas and problems into
-                        useful solutions.
-                    </p>
-
-                </div>
-
-
+            <div class="skill-icon">
+                📱
             </div>
 
-        </section>
+            <h3>
+                Responsive Design
+            </h3>
+
+            <p>
+                Building websites that work across
+                phones, tablets and computers.
+            </p>
+
+        </div>
 
 
 
-       <!-- ================= PROJECTS ================= -->
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                🔐
+            </div>
+
+            <h3>
+                Cybersecurity
+            </h3>
+
+            <p>
+                Currently learning cybersecurity
+                and ethical hacking.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= PROJECTS ================= -->
 
 <section
     id="projects"
@@ -354,6 +401,7 @@
     </div>
 
 
+
     <!-- FEATURED PROJECT -->
 
     <article class="featured-project">
@@ -364,31 +412,28 @@
                 ⭐ FEATURED PROJECT
             </div>
 
-            <div class="project-number">
-                01
-            </div>
 
             <div class="project-icon">
                 🚀
             </div>
 
+
             <h3>
                 To-Do List App
             </h3>
 
+
             <p>
-                A productivity application I built to help
-                users organize their tasks, stay focused
-                and get things done.
+                A productivity application I built to
+                help users organize their tasks,
+                stay focused and get things done.
             </p>
 
 
             <div class="project-tags">
 
                 <span>HTML</span>
-
                 <span>CSS</span>
-
                 <span>JavaScript</span>
 
             </div>
@@ -404,6 +449,7 @@
                 >
                     View Live Project ↗
                 </a>
+
 
                 <a
                     href="https://github.com/russette/todo-list"
@@ -425,12 +471,15 @@
                 MY PRODUCTIVITY APP 🚀
             </div>
 
+
             <div class="preview-title">
                 My To-Do List
             </div>
 
+
             <div class="preview-subtitle">
-                Organize your tasks. Stay focused. Get things done.
+                Organize your tasks. Stay focused.
+                Get things done.
             </div>
 
 
@@ -478,9 +527,11 @@
                     MY HABIT TRACKER 🔥
                 </div>
 
+
                 <div class="preview-title">
                     Build Better Habits
                 </div>
+
 
                 <div class="preview-subtitle">
                     Stay consistent every day.
@@ -494,10 +545,12 @@
                         <small>Streak</small>
                     </div>
 
+
                     <div>
                         <strong>✅ 1</strong>
                         <small>Completed</small>
                     </div>
+
 
                     <div>
                         <strong>📊 100%</strong>
@@ -525,8 +578,8 @@
 
 
             <p>
-                A habit tracking application designed to
-                help users stay consistent and become
+                A habit tracking application designed
+                to help users stay consistent and become
                 better every day.
             </p>
 
@@ -550,6 +603,7 @@
                 >
                     Live Project ↗
                 </a>
+
 
                 <a
                     href="https://github.com/russette/habit-tracker"
@@ -592,9 +646,11 @@
                         Russette.
                     </strong>
 
+
                     <p>
                         IT Student × Future Web Developer
                     </p>
+
 
                     <div class="preview-button">
                         View Projects ↗
@@ -641,6 +697,7 @@
                     Live Website ↗
                 </a>
 
+
                 <a
                     href="https://github.com/russette/my-website"
                     target="_blank"
@@ -659,7 +716,8 @@
 </section>
 
 
-     <!-- ================= CONTACT ================= -->
+
+<!-- ================= CONTACT ================= -->
 
 <section
     id="contact"
@@ -671,6 +729,7 @@
         <p>
             LET'S CONNECT
         </p>
+
 
         <h2>
             Let's build something great.
@@ -696,8 +755,6 @@
         <div class="contact-options">
 
 
-            <!-- EMAIL -->
-
             <a
                 href="mailto:crarcss@gmail.com"
                 class="contact-option"
@@ -706,6 +763,7 @@
                 <span class="contact-option-icon">
                     📧
                 </span>
+
 
                 <span>
 
@@ -719,6 +777,7 @@
 
                 </span>
 
+
                 <span class="contact-arrow">
                     ↗
                 </span>
@@ -726,8 +785,6 @@
             </a>
 
 
-
-            <!-- GITHUB -->
 
             <a
                 href="https://github.com/russette"
@@ -739,6 +796,7 @@
                 <span class="contact-option-icon">
                     🐙
                 </span>
+
 
                 <span>
 
@@ -752,6 +810,7 @@
 
                 </span>
 
+
                 <span class="contact-arrow">
                     ↗
                 </span>
@@ -760,13 +819,12 @@
 
 
 
-            <!-- OPPORTUNITIES -->
-
             <div class="contact-option">
 
                 <span class="contact-option-icon">
                     💼
                 </span>
+
 
                 <span>
 
@@ -780,12 +838,12 @@
 
                 </span>
 
+
                 <span class="contact-status">
                     ●
                 </span>
 
             </div>
-
 
         </div>
 
@@ -793,29 +851,32 @@
 
 </section>
 
-    <!-- ================= FOOTER ================= -->
-
-    <footer>
-
-        <p>
-            © 2026 Russette.
-            Built with HTML, CSS & JavaScript.
-        </p>
-
-
-        <a
-            href="#home"
-            class="back-to-top"
-        >
-            Back to top ↑
-        </a>
-
-    </footer>
+</main>
 
 
 
-    <script src="script.js"></script>
+<!-- ================= FOOTER ================= -->
 
+<footer>
+
+    <p>
+        © 2026 Kirk Russette.
+        Built with HTML, CSS & JavaScript.
+    </p>
+
+
+    <a
+        href="#home"
+        class="back-to-top"
+    >
+        Back to top ↑
+    </a>
+
+</footer>
+
+
+
+<script src="script.js"></script>
 
 </body>
 
