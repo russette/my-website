@@ -8,10 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
        SCROLL REVEAL ANIMATIONS
        ================================================= */
 
-    const revealElements = document.querySelectorAll(
-        ".section-title, .about-card, .project-card, .contact-card"
-    );
-
+  const revealElements = document.querySelectorAll(
+    ".section-title, .about-card, .skill-card, .project-card, .contact-card"
+);
     revealElements.forEach((element) => {
         element.style.opacity = "0";
         element.style.transform = "translateY(30px)";
